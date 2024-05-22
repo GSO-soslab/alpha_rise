@@ -4,10 +4,10 @@
 #   - survey_local
 ##
 
-waypoints:
-  - {x: 0,  y: 40,  z: -5}
-  - {x: 0,  y: 30, z: -10}
-  - {x: 25, y: 40, z: 0}
+# waypoints:
+#   - {x: 0,  y: 40,  z: -5}
+#   - {x: 0,  y: 30, z: -10}
+#   - {x: 25, y: 40, z: 0}
 
 
 update_topic: update_waypoints

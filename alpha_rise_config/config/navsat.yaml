@@ -18,7 +18,7 @@ use_odometry_yaw: true
 
 ## If you want to set a datum uncomment the following
 wait_for_datum: true
-datum: [41.0, -71.0000, 0.0, odom, base_link]
+datum: [41.5733968486164, -71.78820947546939, 0.0, odom, base_link]
 
 # broadcast_cartesian_transform_as_parent_frame: false
 
