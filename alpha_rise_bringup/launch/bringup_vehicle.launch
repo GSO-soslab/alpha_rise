@@ -11,66 +11,28 @@
 <launch>
 
   <arg name="robot_name" default="alpha_rise"/>
+  
+  <arg name="comms_hardware" default="false"/>
 
-  <!-- Just for teleop-->
-  <!-- <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include> -->
+  <arg name="is_sim" default="false"/>
 
-  <!-- Bring up Pico MCU -->
-  <include file="$(find alpha_rise_bringup)/launch/include/pi_pico.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
-
-  <!-- Bring up the Bluerobotics Pressure sensor -->
-  <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_bar30.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>  
-
-  <!-- Bring up the Bluerobotics Ping360 MSIS sensor -->
-  <!-- <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_ping360.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>   -->
-
-  <!-- Bring up the Power Minotor  -->
-  <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>  
-
-  <!-- Bring up Waterlinked DVL -->
-  <include file="$(find alpha_rise_bringup)/launch/include/waterlinked_dvl.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
-
-  <!-- Bring up Xsens AHRS -->
-  <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
-
-  <!-- Bring up GPS -->
-  <!-- <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include> -->
-
-  <!-- Bring up the ROS TF  -->
-  <include file="$(find alpha_rise_bringup)/launch/include/description.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
-
-  <!-- Bring up the Localization Solution -->
-  <include file="$(find alpha_rise_bringup)/launch/include/localization.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
-  </include>
-
-  <!-- Bring up Helm -->
-  <include file="$(find alpha_rise_bringup)/launch/bringup_helm.launch">
+  <!--Launch Sensors and drivers-->
+  <include file="$(find alpha_rise_bringup)/launch/bringup_sensors.launch">
       <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
 
-  <!-- Bring up Control -->
-  <include file="$(find alpha_rise_bringup)/launch/include/control.launch.xml">
-    <arg name="robot_name" value="$(arg robot_name)"/>
+  <!--Launch URDF and robot_localization-->
+  <include file="$(find alpha_rise_bringup)/launch/bringup_localization.launch">
+      <arg name="robot_name" value="$(arg robot_name)"/>
+      <arg name="is_sim" value="$(arg is_sim)"/>
   </include>
+
+  <!--Launch Helm and Control-->
+  <include file="$(find alpha_rise_bringup)/launch/bringup_control.launch">
+      <arg name="robot_name" value="$(arg robot_name)"/>
+      <arg name="is_sim" value="$(arg is_sim)"/>
+  </include>
+
 
   <!-- Bring up Comms -->
   <!-- <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">

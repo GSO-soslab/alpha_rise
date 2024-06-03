@@ -5,17 +5,23 @@
     Author: Lin Zhao
     Email: linzhao@uri.edu
     Year: 2023
-
+<node name="pi_monitor_node" pkg="pi_monitoring" type="log_ram_temp.py" output="screen" />
     Copyright (C) 2022-2023 Smart Ocean Systems Laboratory
 -->
 <launch>
 
   <arg name="robot_name" default="alpha_rise"/>
-  
-    <node ns="$(arg robot_name)" name="xsens_mti_node" pkg="xsens_mti_driver" 
-          type="xsens_mti_node" output="screen">
-        <rosparam command="load" file="$(find alpha_rise_config)/config/xsens_imu.yaml" />
-        <param name="frame_id" value="$(arg robot_name)/imu"/>
-    </node>
+  <node name="pi_monitor_node" pkg="pi_monitoring" type="log_ram_temp.py" output="screen" >
+    <remap from="/ram_utilized" to="/alpha_rise/pi/ram_utilized"/>
+    <remap from="/cpu/temp" to="/alpha_rise/pi/cpu/temp"/>
+    <remap from="cpu/utilized" to="/alpha_rise/pi/cpu/utilized"/>
+</node>
+<!-- <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include> -->
+
+    <!-- <include file="$(find alpha_rise_bringup)/launch/include/xsens_imu.launch.xml">
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include> -->
     
 </launch>

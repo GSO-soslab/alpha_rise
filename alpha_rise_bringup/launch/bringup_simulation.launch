@@ -14,6 +14,8 @@
 
     <arg name="comms_hardware" default="false"/>
 
+    <arg name="is_sim" default="true"/>
+
     <!--
         List of the simulated worlds in the 'alpha_sci_stonefish'
     -->
@@ -24,24 +26,18 @@
         <arg name="scenario" value="$(arg scenario)"/>
     </include>
 
-    <include file="$(find alpha_rise_bringup)/launch/include/description.launch.xml">
+    <!--Launch URDF and robot_localization-->
+    <include file="$(find alpha_rise_bringup)/launch/bringup_localization.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include>
-
-    <include file="$(find alpha_rise_bringup)/launch/include/localization.launch.xml">
-        <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="is_sim" value="true"/>
+        <arg name="is_sim" value="$(arg is_sim)"/>
     </include>
 
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find alpha_rise_description)/rviz/config.rviz"/>
 
-    <include file="$(find alpha_rise_bringup)/launch/include/control.launch.xml">
+    <!--Launch Helm and Control-->
+    <include file="$(find alpha_rise_bringup)/launch/bringup_control.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="is_sim" value="true"/>
-    </include>
-    
-    <include file="$(find alpha_rise_bringup)/launch/bringup_helm.launch">
-        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="is_sim" value="$(arg is_sim)"/>
     </include>
 
     <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
