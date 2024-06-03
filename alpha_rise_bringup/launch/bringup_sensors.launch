@@ -40,4 +40,6 @@
     <include file="$(find alpha_rise_bringup)/launch/include/gps_nmea.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
+
+    <include file="$(find pi_monitoring)/launch/monitor.launch"/>
 </launch>  
