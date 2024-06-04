@@ -41,5 +41,5 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
-    <include file="$(find pi_monitoring)/launch/monitor.launch"/>
+    <include file="$(find computer_monitoring)/launch/monitor.launch"/>
 </launch>  
