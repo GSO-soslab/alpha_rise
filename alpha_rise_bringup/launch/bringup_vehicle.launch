@@ -21,6 +21,11 @@
       <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
 
+  <!--Launch Thruster-->
+  <include file="$(find alpha_rise_bringup)/launch/bringup_thrusters.launch">
+      <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
   <!--Launch URDF and robot_localization-->
   <include file="$(find alpha_rise_bringup)/launch/bringup_localization.launch">
       <arg name="robot_name" value="$(arg robot_name)"/>
@@ -33,6 +38,10 @@
       <arg name="is_sim" value="$(arg is_sim)"/>
   </include>
 
+  <!-- GPIO Manager Node-->
+  <include file="$(find alpha_rise_bringup)/launch/bringup_power_switch.launch">
+      <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
 
   <!-- Bring up Comms -->
   <!-- <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">

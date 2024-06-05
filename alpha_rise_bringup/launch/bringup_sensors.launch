@@ -11,11 +11,6 @@
 <launch>
     <arg name="robot_name" default="alpha_rise"/>
 
-    <!-- Bring up Pico MCU -->
-    <include file="$(find alpha_rise_bringup)/launch/include/pi_pico.launch.xml">
-        <arg name="robot_name" value="$(arg robot_name)"/>
-    </include>
-
     <!-- Bring up the Bluerobotics Pressure sensor -->
     <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_bar30.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
@@ -41,5 +36,8 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
-    <include file="$(find computer_monitoring)/launch/monitor.launch"/>
+    <!-- Bringup computer monitor node-->
+    <include file="$(find alpha_rise_bringup)/launch/include/monitor.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
 </launch>  
