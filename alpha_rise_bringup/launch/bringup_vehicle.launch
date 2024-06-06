@@ -33,7 +33,7 @@
   </include>
 
   <!--Launch Helm and Control-->
-  <include file="$(find alpha_rise_bringup)/launch/bringup_control.launch">
+  <include file="$(find alpha_rise_bringup)/launch/bringup_mvp.launch">
       <arg name="robot_name" value="$(arg robot_name)"/>
       <arg name="is_sim" value="$(arg is_sim)"/>
   </include>
