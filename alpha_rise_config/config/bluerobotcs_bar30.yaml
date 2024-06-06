@@ -10,4 +10,4 @@ sensor:
 
 system:
     # brief: sensor publish rate
-    rate: 5
+    rate: 10

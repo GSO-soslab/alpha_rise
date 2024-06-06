@@ -14,7 +14,7 @@
 
     <arg name="is_sim" default="false"/>
 
-    <arg name="delay" default="20.0" />
+    <arg name="delay" default="30.0" />
 
     <!-- For the simulation -->
     <group if="$(eval arg('is_sim') == true)">

@@ -21,4 +21,4 @@ beta_gain: 0.0
 #integral term.
 sigma: 0.0
 overshoot_timeout: 600
-acceptance_radius: 3.0
+acceptance_radius: 5.0

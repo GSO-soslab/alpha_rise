@@ -38,7 +38,7 @@ max_yaw_rate: 4.7
 # position
 desired_x: 0.0
 desired_y: 0.0
-desired_z: 0.5
+desired_z: 0.2
 
 # orientation (0.4 rad = 23 degree)
 desired_roll: 0.0 

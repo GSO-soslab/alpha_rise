@@ -19,7 +19,7 @@
         <remap from="vel" to="gps/vel"/>
 
         <param name="frame_id" value="$(arg robot_name)/gps"/>
-        <param name="port" value="/dev/alpha_gps"/>
+        <param name="port" value="/dev/ttyUSB0"/>
         <param name="baud" value="9600"/>
     </node>
 

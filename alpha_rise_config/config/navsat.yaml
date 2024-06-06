@@ -1,7 +1,7 @@
 frequency: 10
 
 delay: 1.0
-magnetic_declination_radians: -0.240
+magnetic_declination_radians: 0 #0.237
 
 yaw_offset: 0.0
 
@@ -9,7 +9,7 @@ publish_filtered_gps: true
 
 # broadcast_cartesian_transform: true
 
-use_odometry_yaw: true
+use_odometry_yaw: false
 
 # use_local_cartesian: true
 

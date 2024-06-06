@@ -1,5 +1,5 @@
 Serial:
-  port: /dev/ttySC3
+  port: /dev/ttyACM0
   baud: 115200
   parity: 0
   databits: 8
@@ -13,12 +13,12 @@ System:
 PWM_Control:
   # vertical-front
   sway_bow:
-    channel: 0
+    channel: 4
     mode: thruster
     topic: control/thruster/sway_bow
   # vertical-back
   surge:
-    channel: 1
+    channel: 5
     mode: thruster
     topic: control/thruster/surge
   # horizaontal-front

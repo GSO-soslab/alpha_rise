@@ -52,6 +52,7 @@
          true,   true,  true]
         </rosparam>
         <param name="imu0_nodelay" value="true"/>
+        <param name="imu0_differential" value="false"/>
         <param name="imu0_relative" value="false"/>
         <param name="imu0_queue_size" value="100"/>
         <param name="imu0_remove_gravitational_acceleration" value="$(eval not arg('is_sim'))"/>
@@ -137,6 +138,10 @@
 
         <remap from="depth" to="bar30/depth"/>
         <remap from="depth_filtered" to="depth_filtered"/>
+    </node>
+    <node ns="$(arg robot_name)" name="geopose_publisher" pkg="alpha_localization" type="geopose_publisher_node" 
+            output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+            <param name="odometry_source" value="odometry/filtered/local"/>
     </node>
 
     </group>
