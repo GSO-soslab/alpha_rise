@@ -68,9 +68,9 @@ Pull repository and other dependencies
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_msgs
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_control
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_mission
-git clone --single-branch --branch noetic-devel https://github.com/GSO-soslab/mvp_utilities.git
+git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_utilities.git
 git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/stonefish_mvp
-git clone --single-branch --branch main https://github.com/GSO-soslab/world_of_stonefish.git
+git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/world_of_stonefish.git
 ```
 
 **stonefish_mvp** is a wrapper modified from [stonefish_ros](https://github.com/patrykcieslak/stonefish_ros) for ROS interface with ROS-MVP.
@@ -79,7 +79,7 @@ git clone --single-branch --branch main https://github.com/GSO-soslab/world_of_s
 - Clone [mvp_core] repo which include other hardware related source code, sensor drivers, and other utilities.
 
     ```bash
-    git clone --single-branch --branch noetic-devel https://github.com/GSO-soslab/mvp_core.git
+    git clone --single-branch --branch noetic-devel https://github.com/uri-ocean-robotics/mvp_hardware_drivers.git
     ```
 
 - Install Dependencies

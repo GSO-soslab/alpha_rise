@@ -129,6 +129,10 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        ping360_link_sf:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         pressure:
           Alpha: 1
           Show Axes: false
@@ -149,6 +153,8 @@ Visualization Manager:
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
         All Enabled: false
@@ -176,6 +182,8 @@ Visualization Manager:
           Value: false
         alpha_rise/ping360_link:
           Value: true
+        alpha_rise/ping360_link_sf:
+          Value: true
         alpha_rise/pressure:
           Value: true
         alpha_rise/surge_thruster_link:
@@ -193,36 +201,38 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        alpha_rise/odom:
-          alpha_rise/base_link:
-            alpha_rise/cg_link:
-              {}
-            alpha_rise/dvl:
-              {}
-            alpha_rise/dvl_sf:
-              {}
-            alpha_rise/gps:
-              {}
-            alpha_rise/heave_bow_thruster_link:
-              {}
-            alpha_rise/heave_stern_thruster_link:
-              {}
-            alpha_rise/imu:
-              alpha_rise/imu_sf:
+        alpha_rise/world:
+          alpha_rise/odom:
+            alpha_rise/base_link:
+              alpha_rise/cg_link:
                 {}
-            alpha_rise/nose_tip_link:
-              {}
-            alpha_rise/ping360_link:
-              {}
-            alpha_rise/pressure:
-              {}
-            alpha_rise/surge_thruster_link:
-              {}
-            alpha_rise/sway_bow_thruster_link:
-              {}
-          alpha_rise/world:
-            alpha_rise/world_ned:
-              {}
+              alpha_rise/dvl:
+                {}
+              alpha_rise/dvl_sf:
+                {}
+              alpha_rise/gps:
+                {}
+              alpha_rise/heave_bow_thruster_link:
+                {}
+              alpha_rise/heave_stern_thruster_link:
+                {}
+              alpha_rise/imu:
+                alpha_rise/imu_sf:
+                  {}
+              alpha_rise/nose_tip_link:
+                {}
+              alpha_rise/ping360_link:
+                {}
+              alpha_rise/ping360_link_sf:
+                {}
+              alpha_rise/pressure:
+                {}
+              alpha_rise/surge_thruster_link:
+                {}
+              alpha_rise/sway_bow_thruster_link:
+                {}
+          alpha_rise/world_ned:
+            {}
       Update Interval: 0
       Value: true
     - Class: rviz/Marker
@@ -238,7 +248,7 @@ Visualization Manager:
       Marker Topic: /alpha_rise/helm/path_3d/segment
       Name: Marker
       Namespaces:
-        {}
+        "": true
       Queue Size: 100
       Value: true
     - Angle Tolerance: 0.10000000149011612
@@ -258,7 +268,7 @@ Visualization Manager:
           Scale: 1
           Value: true
         Value: false
-      Enabled: false
+      Enabled: true
       Keep: 100
       Name: Odometry
       Position Tolerance: 0.10000000149011612
@@ -275,7 +285,7 @@ Visualization Manager:
         Value: Arrow
       Topic: /alpha_rise/odometry/filtered/local
       Unreliable: false
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 238; 238; 236
@@ -304,7 +314,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.112959861755371
+      Distance: 17.270889282226562
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -312,17 +322,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.1481793075799942
-        Y: -0.44099971652030945
-        Z: -0.18525326251983643
+        X: -2.85882568359375
+        Y: 47.52504348754883
+        Z: -4.292426109313965
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.45039838552474976
+      Pitch: 1.0547959804534912
       Target Frame: alpha/base_link
-      Yaw: 0.13039813935756683
+      Yaw: 6.1485772132873535
     Saved: ~
 Window Geometry:
   Displays:
