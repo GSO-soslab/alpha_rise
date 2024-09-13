@@ -1,0 +1,21 @@
+pwm_frequency: 47.2
+# pwm_ms_bias: 0.080
+pwm_ms_bias: 0.1
+
+thruster_ch_list: [0, 1, 2, 4]
+
+thruster_topic_list: [control/thruster/sway_bow, 
+                      control/thruster/heave_bow, 
+                      control/thruster/heave_stern,
+                      control/thruster/surge,                      
+                      ]
+thruster_min_us:  [1100, 1100, 1100, 1100]
+thruster_max_us:  [1900, 1900, 1900, 1900]
+thruster_init_us: [1500, 1500, 1500, 1500]
+thruster_direction: [1, 1, 1, 1]
+
+# led_ch_list: [12]
+# led_topic_list: [lumen_brightness]
+# led_min_us: [1100]
+# led_max_us: [1900]
+# led_init_us: [1100]
