@@ -109,24 +109,24 @@ catkin_make
 - Bring up the ALPHA Standard AUV with the Stonefish simualtor.
 
 ```bash
-roslaunch alpha_std_bringup bringup_simulation.launch
+roslaunch alpha_rise_bringup bringup_simulation.launch
 ```
 
 - Enable the controller in a separated terminal
 ```bash
-rosservice call /alpha_std/controller/enable
+rosservice call /alpha_rise/controller/enable
 ```
 
 - Start a path following mission in local frame where your waypoint is defined in `alpha_std_config/mission/param/path_local.yaml`
 
 ```bash
-rosservice call /alpha_std/helm/change_state "state: 'survey_3d'"
+rosservice call /alpha_rise/helm/change_state "state: 'survey_3d'"
 ```
 
 - You can put AUV in idle anytime by changing the state of the helm
 
 ```bash
-rosservice call /alpha_std/helm/change_state "state: 'start'"
+rosservice call /alpha_rise/helm/change_state "state: 'start'"
 ```
 
 - Note: Make sure you selected the correct topics for the Markers in the RViz window.
