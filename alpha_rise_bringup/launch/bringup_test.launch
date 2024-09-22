@@ -12,19 +12,19 @@
 
   <arg name="robot_name" default="alpha_rise"/>
       <!-- Bring up the Bluerobotics Pressure sensor -->
-    <!-- <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_bar30.launch.xml">
+    <include file="$(find alpha_rise_bringup)/launch/include/bluerobotics_bar30.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
     <!-- Bring up the Power Minotor  -->
-    <!-- <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
+    <include file="$(find alpha_rise_bringup)/launch/include/power_monitor.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
     <!-- Bring up the microstrain ahrs  -->
-    <include file="$(find alpha_rise_bringup)/launch/include/microstrain.launch.xml">
+    <!-- <include file="$(find alpha_rise_bringup)/launch/include/microstrain.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> 
+    </include>  -->
 
     <!-- Bring up madgwick filter-->
     <!-- <include file="$(find alpha_rise_bringup)/launch/include/madgwick_filter.launch.xml">

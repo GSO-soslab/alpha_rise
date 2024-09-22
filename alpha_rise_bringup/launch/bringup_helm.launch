@@ -10,7 +10,7 @@
 -->
 <launch>
 
-    <arg name="robot_name" default="changeme"/>
+    <arg name="robot_name" default="alpha_rise"/>
 
     <node ns="$(arg robot_name)" pkg="mvp_helm" type="helm" name="helm" output="screen">
         <!--

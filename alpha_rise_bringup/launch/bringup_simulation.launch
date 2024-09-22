@@ -44,9 +44,9 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 
-    <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
+    <!-- <include file="$(find alpha_rise_bringup)/launch/include/joystick.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include>
+    </include> -->
 
     <!-- <group if="$(eval arg('comms_hardware') == true)">
         <include file="$(find alpha_rise_bringup)/launch/include/acomms.launch.xml">
