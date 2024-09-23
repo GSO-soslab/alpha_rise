@@ -20,7 +20,7 @@ state_fail: kill
 
 
 lookahead_distance: 5.0
-beta_gain: 0.5 # cross-error rate gain
+beta_gain: 0.75 # cross-error rate gain
 #integral term.
 sigma: 0.01
 

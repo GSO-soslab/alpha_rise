@@ -49,19 +49,7 @@
         <param name="twist0_relative" value="false"/>
         <param name="twist0_queue_size" value="20"/>
 
-        <param name="pose0" value="depth/odometry"/>
-        <rosparam param="pose0_config">
-        [false, false,  true,
-         false, false, false,
-         false, false, false,
-         false, false, false,
-         false, false, false]
-        </rosparam>
-        <param name="pose0_differential" value="false"/>
-        <param name="pose0_relative" value="false"/>
-        <param name="pose0_queue_size" value="10"/>
-        <param name="pose0_nodelay" value="true"/>
-
+    
         <param name="odom0" value="gps/odometry"/>
         <rosparam param="odom0_config">
          [true, true, false,
@@ -74,10 +62,24 @@
         <param name="odom0_nodelay" value="true"/>
         <param name="odom0_differential" value="false"/>
         <param name="odom0_relative" value="false"/>
+
+        <param name="odom1" value="depth/odometry"/>
+        <rosparam param="odom1_config">
+         [false, false, true,
+        false, false, false,
+        false, false, false,
+        false, false, false,
+        false, false, false]
+        </rosparam>
+        <param name="odom1_queue_size" value="10"/>
+        <param name="odom1_nodelay" value="true"/>
+        <param name="odom1_differential" value="false"/>
+        <param name="odom1_relative" value="false"/>
     </node>
 
     <node ns="$(arg robot_name)" name="depth_odometry_publisher" pkg="mvp_localization_utilities" type="depth_odometry_publisher" output="screen">
         <param name="frame_id" value="$(arg robot_name)/world"/>
+        <param name="child_frame_id" value = "$(arg robot_name)/pressure"/>
         <remap from="depth" to="bar30/depth"/>
     </node>
     
